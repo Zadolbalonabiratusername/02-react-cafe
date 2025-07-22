@@ -8,7 +8,7 @@ import type { Votes, VoteType } from "../../types/votes";
 import s from "./App.module.css";
 
 const App = () => {
-  const [votes, setVotes] = useState({
+  const [votes, setVotes] = useState<Votes>({
     good: 0,
     neutral: 0,
     bad: 0,
@@ -21,6 +21,7 @@ const App = () => {
 
   const handleVote = (type: VoteType): void => {
     setVotes((prev: Votes) => ({ ...prev, [type]: prev[type] + 1 }));
+    // setVotes({ ...votes, [type]: votes[type] + 1 });
   };
 
   const resetVotes = (): void => {
