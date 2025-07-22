@@ -1,10 +1,10 @@
-import css from "./CafeInfo.module.css";
+import s from "./CafeInfo.module.css";
 
 const CafeInfo = () => {
   return (
-    <div className={css.container}>
-      <h1 className={css.title}>Sip Happens Café</h1>
-      <p className={css.description}>
+    <div className={s.container}>
+      <h1 className={s.title}>Sip Happens Café</h1>
+      <p className={s.description}>
         Please rate our service by selecting one of the options below.
       </p>
     </div>
