@@ -3,13 +3,13 @@ import s from "./VoteStats.module.css";
 
 interface VoteStatsProps {
   votes: Votes;
-  votesTotal: number;
+  totalVotes: number;
   positiveRate: number;
 }
 
 const VoteStats = ({
   votes: { good, neutral, bad },
-  votesTotal,
+  totalVotes,
   positiveRate,
 }: VoteStatsProps) => {
   return (
@@ -24,7 +24,7 @@ const VoteStats = ({
         Bad: <strong>{bad}</strong>
       </p>
       <p className={s.stat}>
-        Total: <strong>{votesTotal}</strong>
+        Total: <strong>{totalVotes}</strong>
       </p>
       <p className={s.stat}>
         Positive: <strong>{positiveRate}%</strong>

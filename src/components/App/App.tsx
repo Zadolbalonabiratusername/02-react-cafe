@@ -14,9 +14,9 @@ const App = () => {
     bad: 0,
   });
 
-  const votesTotal = votes.bad + votes.good + votes.neutral;
-  const positiveRate = votesTotal
-    ? Math.round((votes.good / votesTotal) * 100)
+  const totalVotes = votes.bad + votes.good + votes.neutral;
+  const positiveRate = totalVotes
+    ? Math.round((votes.good / totalVotes) * 100)
     : 0;
 
   const handleVote = (type: VoteType): void => {
@@ -38,12 +38,12 @@ const App = () => {
       <VoteOptions
         onVote={handleVote}
         onReset={resetVotes}
-        canReset={votesTotal > 0}
+        canReset={totalVotes > 0}
       />
-      {votesTotal > 0 ? (
+      {totalVotes > 0 ? (
         <VoteStats
           votes={votes}
-          votesTotal={votesTotal}
+          totalVotes={totalVotes}
           positiveRate={positiveRate}
         />
       ) : (
